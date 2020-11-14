@@ -1,0 +1,44 @@
+<mvc:View controllerName="ns.HTML5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+
+                    <Table  id="idProductstable" inset="false" items="{ path: '/Products', sorter: { path: 'Name' } }">
+                    <columns>
+                    <Column>
+                    <Text text="Product"/>
+                    </Column>
+                    <Column  demandPopin="true" minScreenWidth="Tablet">
+                    <Text text="Supplier"/>
+                    </Column>
+                    <Column  demandPopin="true" minScreenWidth="Desktop" hAlign="End">
+                    <Text text="Dimensions"/>
+                    </Column>
+                    <Column  demandPopin="true" minScreenWidth="Desktop" hAlign="Center">
+                    <Text text="Weight"/>
+                    </Column>
+                    <Column  hAlign="End">
+                    <Text text="Price"/>
+                    </Column>
+                    </columns>
+                    <items>
+                    <ColumnListItem >
+                    <cells>
+                    <ObjectIdentifier title="{Name}" text="{Id}"/>
+                    <Text text="{SupplierName}"/>
+                    <Text text="{DimensionWidth} x {DimensionDepth} x {DimensionHeight} {DimensionUnit}"/>
+                    <!-- <ObjectNumber state="{ parts: [ {path: 'WeightMeasure'}, {path: 'WeightUnit'} ], formatter: '.Formatter.weightState' }" unit="{WeightUnit}" number="{WeightMeasure}"/>
+
+<ObjectNumber unit="{CurrencyCode}" number="{ parts:[{path:'Price'},{path:'CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"/> -->
+                    </cells>
+                    </ColumnListItem>
+                    </items>
+                    </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
